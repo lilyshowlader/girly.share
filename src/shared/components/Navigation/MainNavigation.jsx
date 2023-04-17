@@ -2,6 +2,8 @@ import React from 'react'
 import './MainNavigation.css'
 import MainHeader from './MainHeader'
 import { Link } from 'react-router-dom'
+import NavLinks from './NavLinks'
+
 export default function MainNavigation(props) {
 	return (
 		<>
@@ -11,9 +13,9 @@ export default function MainNavigation(props) {
 				<span />
 				<span />
 			</button>
-			<h1 className='main-navigation__title'><Link to='/'>your products</Link></h1>
+			<h1 className='main-navigation__title'><Link to='/'>my products</Link></h1>
 			<nav>
-				...
+				<NavLinks />
 			</nav>
 		</MainHeader>
 		</>
