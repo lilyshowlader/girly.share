@@ -5,7 +5,11 @@ function Users() {
   // dummy data 
   const USERS = [
     {id: 'userone', 
-    name: 'Lily', 
+    name: 'Lily Howlader', 
+    image: 'https://i.imgur.com/unL5G2S.jpg', 
+    item: '4'},
+    {id: 'userone', 
+    name: 'Mia Howlader', 
     image: 'https://i.imgur.com/unL5G2S.jpg', 
     item: '4'}
   ]
