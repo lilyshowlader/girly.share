@@ -1,10 +1,13 @@
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import Users from './user/pages/Users'
 import NewProduct from './products/pages/NewProduct'
+import MainNavigation from './shared/components/Navigation/MainNavigation';
 
 function App() {
   return (
     <Router>
+    <MainNavigation />
+    <main>
     <Switch>
     <Route path ='/' exact>
       <Users />
@@ -16,6 +19,7 @@ function App() {
 
     <Redirect to='/' />
     </Switch>
+    </main>
     </ Router>
   )
 }

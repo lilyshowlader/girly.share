@@ -11,7 +11,7 @@ function Users() {
     {id: 'userone', 
     name: 'Mia Howlader', 
     image: 'https://i.imgur.com/unL5G2S.jpg', 
-    item: '4'}
+    item: '2'}
   ]
 
   return (

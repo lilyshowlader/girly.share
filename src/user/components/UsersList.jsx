@@ -1,13 +1,15 @@
 import React from 'react'
 import './UsersList.css'
 import UserProduct from './UserItem'
-
+import Card from '../../shared/components/UIElements/Card'
 function UsersList (props) {
   // products will be an array of objects, if there are 0 products, there is not a user yet.
   if (props.items.length === 0) {
     return (
       <div className='center'>
+        <Card>
       <h2> No users found </h2>
+      </Card>
       </div>  
     )
   }
