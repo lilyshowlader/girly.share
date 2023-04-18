@@ -24,8 +24,8 @@
 .nav-links a:hover,
 .nav-links a:active,
 .nav-links a.active {
-  background: #f8df00;
-  border-color: #292929;
+  background: #f3e98c;
+  border-color: #f3e98c;
   color: #292929;
 }
 
@@ -60,6 +60,7 @@
   .nav-links a {
     color: white;
     text-decoration: none;
+    font-family: 'Noto Serif JP', serif;
   }
 
   .nav-links button {

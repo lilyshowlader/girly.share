@@ -5,28 +5,28 @@ function Users() {
   // dummy data 
   const USERS = [
     {id: 'userone', 
-    name: 'Lily Howlader', 
+    name: 'lily howlader', 
     image: 'https://i.imgur.com/unL5G2S.jpg', 
-    item: '4'},
+    product: '4'},
 
     {id: 'usertwo', 
-    name: 'Mia Howlader', 
-    image: 'https://i.imgur.com/unL5G2S.jpg', 
-    item: '2'},
+    name: 'mia howlader', 
+    image: 'https://i.imgur.com/aP3WpyJ.png', 
+    product: '2'},
 
     {id: 'userthree', 
-    name: 'Maeby Howlader', 
-    image: 'https://i.imgur.com/unL5G2S.jpg', 
-    item: '2'},
+    name: 'maeby howlader', 
+    image: 'https://i.imgur.com/migmPLs.png', 
+    product: '2'},
 
     {id: 'userthree', 
-    name: 'Maya Howlader', 
-    image: 'https://i.imgur.com/unL5G2S.jpg', 
-    item: '2'},
+    name: 'maya howlader', 
+    image: 'https://i.imgur.com/w5oMp4q.png', 
+    product: '2'},
   ]
 
   return (
-    <UsersList items={USERS}/>
+    <UsersList users={USERS}/>
   )
 }
 

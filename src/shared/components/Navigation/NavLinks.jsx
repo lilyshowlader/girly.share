@@ -16,7 +16,7 @@ export default function NavLinks(props) {
 				<NavLink to='/products/new'>add product</NavLink>
 			</li>
 			<li>
-				<NavLink to='/auth'>authenticate</NavLink>
+				<NavLink to='/auth'>log in</NavLink>
 			</li>
 			
 		</ul>
