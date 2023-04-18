@@ -1,5 +1,5 @@
 import React from 'react'
-import '/.ProductList.css'
+import './ProductItem.css'
 import Card from '../../shared/components/UIElements/Card'
 
 
@@ -9,7 +9,7 @@ export default function ProductItem(props) {
 
 		<li className='product-item'>
 		
-		<Card>
+		<Card className='product-item__content'>
 		<div className='product-item_image'>
 			<img src={props.image} alt={props.title} />
 		</div>

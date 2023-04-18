@@ -7,7 +7,8 @@ import NewProduct from '../pages/NewProduct'
 
 
 export default function ProductList(props) {
-	if (props.product.length === 0) {
+	console.log(props)
+	if (props.products.length === 0) {
 			return <div className='product-list-center'>
 				<Card>
 					<h2>no products found, let's create one!</h2>
@@ -17,7 +18,7 @@ export default function ProductList(props) {
 		}
 
 	return <ul className='product-list'>
-		{props.items.map(product => <ProductItem 
+		{props.products.map(product => <ProductItem 
 		key={product.id} 
 		image={product.imageUrl} 
 		title={product.title} 
