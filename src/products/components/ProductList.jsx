@@ -2,7 +2,7 @@ import React from 'react'
 import './ProductList.css'
 import Card from '../../shared/components/UIElements/Card'
 import ProductItem from './ProductItem'
-import NewProduct from '../pages/NewProduct'
+import UserProducts from '../../user/pages/UserProducts'
 
 
 

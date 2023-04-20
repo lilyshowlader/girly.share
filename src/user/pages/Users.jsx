@@ -7,7 +7,8 @@ function Users() {
     {id: 'userone', 
     name: 'lily howlader', 
     image: 'https://i.imgur.com/unL5G2S.jpg', 
-    product: '4'},
+    product: '4', 
+    },
 
     {id: 'usertwo', 
     name: 'mia howlader', 
@@ -17,12 +18,12 @@ function Users() {
     {id: 'userthree', 
     name: 'maeby howlader', 
     image: 'https://i.imgur.com/migmPLs.png', 
-    product: '2'},
+    product: '3'},
 
-    {id: 'userthree', 
+    {id: 'userfour', 
     name: 'maya howlader', 
     image: 'https://i.imgur.com/w5oMp4q.png', 
-    product: '2'},
+    product: '7'},
   ]
 
   return (

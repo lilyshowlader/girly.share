@@ -7,20 +7,19 @@ import { Link } from 'react-router-dom'
 function UserProduct (props) {
 	return (
 		<li className="user-item">
-				<Card className="user-item__content">
-				<Link to={`/${props.id}/places`}>
-				<div className='user-item__image'>
-					<Avatar image={props.image} alt={props.name}/> 
-				</div>
-				<div className='user-item__info'>
-					<h2>{props.name}</h2>
-					<h5>{props.productCount} {props.placeCount === 1 ? 'product' : 'products'}</h5>
-				</div>
+			<Card className="user-item__content">
+				<Link to={`/${props.id}/products`}>
+					<div className='user-item__image'>
+						<Avatar image={props.image} alt={props.name}/> 
+					</div>
+					<div className='user-item__info'>
+						<h2>{props.name}</h2>
+						<h5>{props.productCount} {props.productCount === 1 ? 'product' : 'products'}</h5>
+					</div>
 				</Link>
-				</Card>
+			</Card>
 		</li>
 	)
-
 }
 
 export default UserProduct
