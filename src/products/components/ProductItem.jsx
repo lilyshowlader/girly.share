@@ -1,7 +1,7 @@
 import React from 'react'
 import './ProductItem.css'
 import Card from '../../shared/components/UIElements/Card'
-
+import Button from '../../shared/components/FormElements/Button'
 
 export default function ProductItem(props) {
 	return (
@@ -19,8 +19,8 @@ export default function ProductItem(props) {
 			<p>{props.link}</p>
 		</div>
 		<div className='product-item__actions'>
-			<button>edit</button>
-			<button>delete</button>
+			<Button>edit</Button>
+			<Button>delete</Button>
 		</div>
 		</Card>
 		
