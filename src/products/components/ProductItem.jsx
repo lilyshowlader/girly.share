@@ -19,7 +19,7 @@ export default function ProductItem(props) {
 			<p>{props.link}</p>
 		</div>
 		<div className='product-item__actions'>
-			<Button>edit</Button>
+			<Button to={`/products/${props.id}`}>edit</Button>
 			<Button>delete</Button>
 		</div>
 		</Card>

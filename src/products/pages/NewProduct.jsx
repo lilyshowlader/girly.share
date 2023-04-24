@@ -1,9 +1,12 @@
 import React from 'react'
-
-function NewPlace() {
+import Input from '../../shared/components/FormElements/Input'
+import './NewProduct.css'
+function NewProduct() {
   return(
-    <h2>new product works!</h2>
+    <form className='place-form'>
+      <Input element='input' type='text' label='Title'/>
+    </form>
   )
 }
 
-export default NewPlace 
+export default NewProduct
