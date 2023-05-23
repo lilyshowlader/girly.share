@@ -17,7 +17,7 @@ const formReducer = (state, action) => {
       }
       return {
         ...state,
-        input: {
+        inputs: {
           ...state.inputs,
           [action.inputId] : { value: action.value, isValid: action.isValid }
         },
@@ -52,9 +52,15 @@ function NewProduct() {
     dispatch({ type: "INPUT_CHANGE", value: value, isValid: isValid, inputId: id})
   }, [])
 
+  const productSubmitHandler = event => {
+    event.preventDefault()
+    console.log(formState.inputs)
+  }
+
+
 
   return (
-    <form className='place-form'>
+    <form className='place-form' onSubmit={productSubmitHandler}>
       <Input 
       id='title'
       element='input' 
