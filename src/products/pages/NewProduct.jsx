@@ -54,7 +54,7 @@ function NewProduct() {
 
   const productSubmitHandler = event => {
     event.preventDefault()
-    console.log(formState.inputs)
+    console.log(formState.inputs) // send this to the backend.
   }
 
 
