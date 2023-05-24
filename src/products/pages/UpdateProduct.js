@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import Input from '../../shared/components/FormElements/Input'
 import Button from '../../shared/components/FormElements/Button'
-
+import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from '../../shared/util/validators'
 
 export default function UpdateProduct() {
 // dummy data 
@@ -44,7 +44,27 @@ const USERS = [
 	return (
 		// if we find the place, we want to display the form and initialize the values from that submitted form 
 		<form>
-
+			<Input id='title' 
+			element="input" 
+			type="text" 
+			label="Title" 
+			validators={[VALIDATOR_REQUIRE]}
+			errorText="please enter a valid title!"
+			onInput={() => {}}
+			value={identifiedProduct.title}
+			valid={true}
+			/>
+			<Input id='description' 
+			element="textarea" 
+			type="text" 
+			label="Description" 
+			validators={[VALIDATOR_MINLENGTH]}
+			errorText="please enter a valid description!"
+			onInput={() => {}}
+			value={identifiedProduct.description}
+			valid={true}
+			/>
+			<Button type='submit' disabled={true}>update place</Button>
 		</form>
 	)
 }
