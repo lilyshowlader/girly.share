@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import Input from '../../shared/components/FormElements/Input'
 import Button from '../../shared/components/FormElements/Button'
 import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from '../../shared/util/validators'
+import './ProductForm.css'
 
 export default function UpdateProduct() {
 // dummy data 
@@ -48,7 +49,7 @@ const identifiedProduct = DUMMY_PRODUCTS.find(p => p.id === productId);
 
 	return (
 		// if we find the place, we want to display the form and initialize the values from that submitted form 
-		<form>
+		<form className='place-form'>
 			<Input id='title' 
 			element="input" 
 			type="text" 

@@ -2,7 +2,7 @@ import React, { useCallback, useReducer } from 'react'
 import Input from '../../shared/components/FormElements/Input'
 import Button from'../../shared/components/FormElements/Button'
 import { VALIDATOR_REQUIRE } from '../../shared/util/validators'
-import './NewProduct.css'
+import './ProductForm.css'
 
 const formReducer = (state, action) => {
   switch (action.type) {
