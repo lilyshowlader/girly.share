@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductList from '../../products/components/ProductList'
+import ProductList from '../components/ProductList'
 import { useParams } from 'react-router-dom'
 
 const DUMMY_PRODUCTS = [ 

@@ -2,7 +2,7 @@ import React from 'react'
 import './ProductList.css'
 import Card from '../../shared/components/UIElements/Card'
 import ProductItem from './ProductItem'
-import UserProducts from '../../user/pages/UserProducts'
+import UserProducts from '../pages/UserProducts'
 
 
 
@@ -20,6 +20,7 @@ export default function ProductList(props) {
 	return <ul className='product-list'>
 		{props.products.map(product => <ProductItem 
 		key={product.id} 
+		id={product.id}
 		image={product.imageUrl} 
 		title={product.title} 
 		description={product.description} link={product.link} 

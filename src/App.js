@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
-import Users from './user/pages/Users'
+import Users from './products/pages/Users'
 import NewProduct from './products/pages/NewProduct'
 import MainNavigation from './shared/components/Navigation/MainNavigation';
-import UserProducts from './user/pages/UserProducts';
+import UserProducts from './products/pages/UserProducts';
 import UpdateProduct from './products/pages/UpdateProduct';
 
 

@@ -6,32 +6,37 @@ import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from '../../shared/util/valida
 
 export default function UpdateProduct() {
 // dummy data 
-const USERS = [
-	{id: 'userone', 
-	name: 'lily howlader', 
-	image: 'https://i.imgur.com/unL5G2S.jpg', 
-	product: '4', 
+const DUMMY_PRODUCTS = [ 
+	{
+		id: 'p1',
+		title: 'mirena',
+		description: 'low dose hormonal birth control',
+		imageUrl: 'https://i.imgur.com/FRvy3sb.png',
+		creator: 'userone'
 	},
 
-	{id: 'usertwo', 
-	name: 'mia howlader', 
-	image: 'https://i.imgur.com/aP3WpyJ.png', 
-	product: '2'},
+	{
+		id: 'p2',
+		title: 'nuvaring',
+		description: 'low dose hormonal birth control',
+		imageUrl: 'https://i.imgur.com/p9WwwKV.png',
+		creator: 'usertwo'
+	},
 
-	{id: 'userthree', 
-	name: 'maeby howlader', 
-	image: 'https://i.imgur.com/migmPLs.png', 
-	product: '3'},
-
-	{id: 'userfour', 
-	name: 'maya howlader', 
-	image: 'https://i.imgur.com/w5oMp4q.png', 
-	product: '7'},
+	{
+		id: 'p3',
+		title: 'cora tampons',
+		description: 'organic cotton tampons',
+		imageUrl: 'https://i.imgur.com/mzJlcuB.png',
+		creator: 'userthree'
+	},
 ]
 
-	const productId = useParams().productId
+const productId = useParams().productId;
 
-	const identifiedProduct = USERS.find(p => p.id === productId)
+const identifiedProduct = DUMMY_PRODUCTS.find(p => p.id === productId);
+
+
 	// go through all products and find the product where the ID is equal to productId
 
 	if (!identifiedProduct) {
@@ -56,9 +61,8 @@ const USERS = [
 			/>
 			<Input id='description' 
 			element="textarea" 
-			type="text" 
 			label="Description" 
-			validators={[VALIDATOR_MINLENGTH]}
+			validators={[VALIDATOR_MINLENGTH(5)]}
 			errorText="please enter a valid description!"
 			onInput={() => {}}
 			value={identifiedProduct.description}
