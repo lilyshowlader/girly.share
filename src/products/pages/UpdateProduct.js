@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Input from '../../shared/components/FormElements/Input'
 import Button from '../../shared/components/FormElements/Button'
 import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from '../../shared/util/validators'
+import { useForm } from '../../shared/hooks/form-hook'
 import './ProductForm.css'
 
 export default function UpdateProduct() {
@@ -35,41 +36,76 @@ const DUMMY_PRODUCTS = [
 
 const productId = useParams().productId;
 
+
+const [formState, inputHandler, setFormData] = useForm({
+	title: {
+		value: '',
+		isValid: false,
+	},
+	description: {
+		value: '',
+		isValid: false,
+	}
+}, false )
+
 const identifiedProduct = DUMMY_PRODUCTS.find(p => p.id === productId);
-
-
 	// go through all products and find the product where the ID is equal to productId
 
-	if (!identifiedProduct) {
+	useEffect(() => {
+		setFormData({
+			title: {
+				value: identifiedProduct.title,
+				isValid: true,
+			},
+			description: {
+				value: identifiedProduct.description,
+				isValid: true,
+			}
+		}, true)
+	}, [setFormData, identifiedProduct])
+	
+
+const productUpdateSubmitHandler = event => {
+	event.preventDefault();
+	console.log(formState.inputs)
+}
+
+if (!identifiedProduct) {
+	return <div className="center">
+		<h2>could not find product!</h2>
+		</div>
+}
+	// if we can't the product ^ send this message 
+
+	if (!formState.inputs.title.value) {
 		return <div className="center">
-			<h2>could not find product!</h2>
+		<h2>loading</h2>
 		</div>
 	}
-	// if we can't the product ^ send this message 
 
 	return (
 		// if we find the place, we want to display the form and initialize the values from that submitted form 
-		<form className='place-form'>
+		<form className='place-form' onSubmit={productUpdateSubmitHandler }>
 			<Input id='title' 
 			element="input" 
 			type="text" 
 			label="Title" 
 			validators={[VALIDATOR_REQUIRE]}
 			errorText="please enter a valid title!"
-			onInput={() => {}}
-			value={identifiedProduct.title}
-			valid={true}
+			onInput={inputHandler}
+			initialValue={formState.inputs.title.value}
+			initialValid={formState.inputs.title.value.isValid}
 			/>
 			<Input id='description' 
 			element="textarea" 
 			label="Description" 
 			validators={[VALIDATOR_MINLENGTH(5)]}
 			errorText="please enter a valid description!"
-			onInput={() => {}}
-			value={identifiedProduct.description}
-			valid={true}
+			onInput={inputHandler}
+			initialValue={formState.inputs.description.value}
+			initialValid={formState.inputs.title.isValid}
 			/>
-			<Button type='submit' disabled={true}>update place</Button>
+			<Button type='submit' disabled={!formState.isValid}>update place</Button>
 		</form>
 	)
 }
