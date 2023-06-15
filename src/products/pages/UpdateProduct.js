@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Input from '../../shared/components/FormElements/Input'
 import Button from '../../shared/components/FormElements/Button'
@@ -34,6 +34,7 @@ const DUMMY_PRODUCTS = [
 	},
 ]
 
+const [isLoading, setIsLoading] = useState(true)
 const productId = useParams().productId;
 
 
@@ -62,6 +63,7 @@ const identifiedProduct = DUMMY_PRODUCTS.find(p => p.id === productId);
 				isValid: true,
 			}
 		}, true)
+		setIsLoading(false)
 	}, [setFormData, identifiedProduct])
 	
 
@@ -77,7 +79,7 @@ if (!identifiedProduct) {
 }
 	// if we can't the product ^ send this message 
 
-	if (!formState.inputs.title.value) {
+	if (!isLoading) {
 		return <div className="center">
 		<h2>loading</h2>
 		</div>
@@ -85,6 +87,7 @@ if (!identifiedProduct) {
 
 	return (
 		// if we find the place, we want to display the form and initialize the values from that submitted form 
+		// the form is only rendered if we have a title value 
 		<form className='place-form' onSubmit={productUpdateSubmitHandler }>
 			<Input id='title' 
 			element="input" 
@@ -105,7 +108,7 @@ if (!identifiedProduct) {
 			initialValue={formState.inputs.description.value}
 			initialValid={formState.inputs.title.isValid}
 			/>
-			<Button type='submit' disabled={!formState.isValid}>update place</Button>
+			<Button type='submit' disabled={!formState.isValid}>update product</Button>
 		</form>
 	)
 }
